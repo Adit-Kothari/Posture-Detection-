@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Frontend: React",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 3000,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Backend: Flask",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/posture.py",
+      "console": "integratedTerminal",
+      "python": "${command:python.interpreterPath}",
+      "env": {
+        "FLASK_ENV": "development"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (React + Flask)",
+      "configurations": ["Frontend: React", "Backend: Flask"]
+    }
+  ]
+}
